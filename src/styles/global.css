@@ -1,0 +1,21 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cambria', 'Cochin', 'Georgia', 'Times', 'Times New Roman', serif;
+  background-color: #fffdca;
+  
+}
+
+/* Color Variables */
+:root {
+  --light-yellow: #fffdca;
+  --vivid-red: #ff1200;
+  --vivid-blue: #001db7;
+  --pastel-red: #f49189;
+  --text-dark: #333333;
+}

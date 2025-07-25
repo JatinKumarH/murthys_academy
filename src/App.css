@@ -1,0 +1,11 @@
+/* This ensures your app takes up the full screen height, pushing the footer down */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* This makes the main content area expand to fill all available space */
+main {
+  flex-grow: 1;
+}

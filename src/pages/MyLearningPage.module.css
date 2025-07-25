@@ -1,0 +1,208 @@
+.learningPage {
+    display: flex;
+    background-color: #1c1c1c;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+}
+
+.mainContent {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    /* FIX: Removed fixed height to prevent overlapping the footer */
+}
+
+.playerWrapper {
+    width: 100%;
+    padding-top: 56.25%; 
+    position: relative;
+    background-color: black;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.reactPlayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.courseHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #2a2a2a;
+    color: white;
+}
+.headerLeft {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.backButton {
+    background: none;
+    border: 1px solid #555;
+    color: #ccc;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.courseTitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.progressBar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+.progress {
+    width: 100px;
+    height: 8px;
+    background-color: #555;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.progress > div {
+    height: 100%;
+    background-color: var(--vivid-red);
+}
+
+.bottomSection {
+    padding: 2rem 3rem;
+    background-color: white;
+    flex-grow: 1;
+}
+.tabs {
+    border-bottom: 2px solid #eee;
+    margin-bottom: 1.5rem;
+}
+.tabs button {
+    background: none;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+}
+.tabs button.activeTab {
+    color: var(--vivid-red);
+    border-bottom-color: var(--vivid-red);
+}
+.overview h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+.overview p {
+    line-height: 1.7;
+    color: #333;
+}
+
+.sidebar {
+    width: 380px;
+    flex-shrink: 0;
+    background-color: #f7f7f7;
+    border-left: 1px solid #ddd;
+    /* FIX: Removed fixed height and let flexbox handle the stretching */
+    align-self: stretch; 
+    overflow-y: auto;
+}
+.sidebarTitle {
+    padding: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    background-color: #f7f7f7;
+    z-index: 10;
+}
+.accordionItem {
+    border-bottom: 1px solid #ddd;
+}
+.accordionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: white;
+}
+.arrowIcon {
+    transition: transform 0.3s ease;
+}
+.arrowIcon.open {
+    transform: rotate(180deg);
+}
+.accordionContent {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+}
+.accordionContent.open {
+    max-height: 500px;
+}
+.accordionContent ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+}
+.accordionContent li {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    border-top: 1px solid #f0f0f0;
+    transition: background-color 0.2s ease;
+}
+.accordionContent li:hover {
+    background-color: #f0f0f0;
+}
+.accordionContent li.activeLecture {
+    background-color: var(--light-yellow);
+    border-left: 4px solid var(--vivid-red);
+    padding-left: calc(1.5rem - 4px);
+}
+.lectureIcon {
+    margin-top: 4px;
+    font-size: 1rem;
+    color: #555;
+    flex-shrink: 0;
+}
+.lectureName {
+    display: block;
+    font-size: 0.95rem;
+}
+.lectureDuration {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.notFound {
+    padding: 5rem;
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+    .learningPage {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        max-height: 50vh;
+        align-self: auto;
+    }
+}

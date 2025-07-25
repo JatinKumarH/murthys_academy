@@ -1,0 +1,95 @@
+.footer {
+  background-color: var(--pastel-red);
+  color: var(--text-dark);
+  padding: 5rem 8%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.leftColumn {
+  flex: 2;
+  max-width: 450px;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  font-family: 'Cambria', serif;
+  color: var(--text-dark);
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.rightColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.iconGroup {
+  display: flex;
+  gap: 1rem;
+}
+
+/* FIX: This now styles both the <a> and <button> elements in the icon group */
+.iconGroup a, .iconGroup button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: white;
+  color: var(--text-dark);
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.iconGroup a:hover, .iconGroup button:hover {
+  background-color: var(--vivid-red);
+  transform: translateY(-3px);
+  color: white;
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 2rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footerContent {
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+    text-align: center;
+  }
+  .rightColumn {
+      align-items: center;
+  }
+}

@@ -1,0 +1,34 @@
+.courses {
+  /* ENHANCEMENT: Added a soft background and more vertical padding */
+  background-color: #fcfcfc;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 6rem 5%;
+  text-align: center;
+}
+
+.title {
+  color: var(--vivid-red);
+  font-size: 3rem; /* Made title more impactful */
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 4rem;
+  /* ENHANCEMENT: Using the modern Poppins font */
+  font-family: 'Poppins', sans-serif;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem; /* Increased gap for more spacing */
+}
+
+.cardLink {
+  text-decoration: none;
+  color: var(--text-dark);
+}

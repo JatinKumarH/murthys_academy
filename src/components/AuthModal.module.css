@@ -1,0 +1,74 @@
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal {
+  background-color: white;
+  font-family: 'Poppins', sans-serif;
+  padding: 2.5rem 3.5rem;
+  border-radius: 12px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 450px;
+  border-top: 5px solid var(--vivid-red);
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  font-weight: 300;
+  cursor: pointer;
+  color: #aaa;
+  transition: color 0.2s ease;
+}
+
+.closeButton:hover {
+    color: var(--text-dark);
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.title {
+  font-family: 'Cambria', serif;
+  color: var(--text-dark);
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  margin-bottom: 2.5rem;
+  color: #666;
+  font-size: 1rem;
+}
+
+.googleButtonContainer {
+    display: flex;
+    justify-content: center;
+}

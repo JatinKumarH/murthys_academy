@@ -1,0 +1,47 @@
+.card {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  /* ENHANCEMENT: Softer, layered shadow for a modern look */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+  border: 1px solid #f0f0f0; /* Softer border */
+}
+
+/* ENHANCEMENT: More dynamic hover effect */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.imageContainer {
+  position: relative;
+  padding: 10px;
+  overflow: hidden; /* Needed for image zoom effect */
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  /* ENHANCEMENT: Add transition for zoom effect */
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover .imageContainer img {
+    transform: scale(1.05); /* Zoom image on card hover */
+}
+
+.priceBanner {
+  font-weight: bold;
+  font-size: 1.25rem;
+  padding: 15px 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: var(--text-dark);
+  /* ENHANCEMENT: Subtle gradient on the price banner */
+  background-image: linear-gradient(to top, #f49189, #f6a19c);
+  border-top: 1px solid #eee;
+}

@@ -1,0 +1,122 @@
+/* ENHANCEMENT: Added keyframes for page load animation */
+@keyframes fadeInOnLoad {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.detailPage {
+  background-color: white;
+  min-height: 80vh;
+  padding: 5rem 10%; /* Increased padding for a more spacious feel */
+  /* ENHANCEMENT: Apply fade-in animation */
+  animation: fadeInOnLoad 0.8s ease-out forwards;
+}
+
+.mainTitle {
+  text-align: center;
+  color: var(--vivid-red);
+  font-size: 2.5rem;
+  font-family: 'Cambria', serif;
+  margin-bottom: 5rem;
+}
+
+.contentWrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 4rem; /* Increased gap */
+}
+
+.imageContainer {
+  flex: 1;
+  max-width: 400px;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: auto;
+  /* ENHANCEMENT: Modern, soft shadow and rounded corners */
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ENHANCEMENT: Subtle hover effect on the image */
+.imageContainer img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.textContainer {
+  flex: 1.5; /* Give text more space */
+  padding-top: 1rem;
+}
+
+.instructorName {
+  position: relative;
+  font-family: 'Cambria', serif;
+  font-size: 2.8rem;
+  margin-bottom: 2.5rem;
+  font-weight: bold;
+  color: var(--text-dark);
+  padding-bottom: 1.5rem;
+}
+
+/* ENHANCEMENT: Stylish divider below the name */
+.instructorName::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background-color: var(--vivid-red);
+}
+
+.instructorBio {
+  /* ENHANCEMENT: Modern typography for readability */
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: #333;
+}
+
+.notFound {
+    text-align: center;
+    padding: 5rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 992px) {
+    .contentWrapper {
+        gap: 2rem;
+    }
+    .instructorName {
+        font-size: 2.2rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+  .detailPage {
+      padding: 3rem 5%;
+  }
+  .contentWrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+  .textContainer {
+    text-align: center;
+  }
+  .instructorName::after {
+      left: 50%;
+      transform: translateX(-50%);
+  }
+}

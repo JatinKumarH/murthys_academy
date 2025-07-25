@@ -1,0 +1,71 @@
+.about {
+  /* ENHANCEMENT: Increased vertical padding for more breathing room */
+  padding: 6rem 8%;
+  background-color: white;
+}
+
+.title {
+  text-align: center;
+  color: var(--vivid-red);
+  font-size: 3rem;
+  font-family: 'Cambria', serif;
+  /* ENHANCEMENT: Increased bottom margin for better spacing */
+  margin-bottom: 5rem;
+}
+
+.featureRow {
+  display: flex;
+  align-items: center;
+  /* ENHANCEMENT: Increased gap between text and image */
+  gap: 5rem;
+  margin-bottom: 5rem;
+}
+
+.featureRow:last-child {
+    margin-bottom: 0;
+}
+
+.featureRow.reverse {
+  flex-direction: row-reverse;
+}
+
+.text {
+  flex: 1.5; /* Give text slightly more space */
+  /* ENHANCEMENT: Using the modern Poppins font */
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.imageContainer {
+  flex: 1;
+}
+
+.imageContainer img {
+  width: 100%;
+  /* ENHANCEMENT: Added soft radius and shadow for a modern card look */
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ENHANCEMENT: Subtle hover effect on images */
+.imageContainer img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .featureRow, .featureRow.reverse {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .featureRow, .featureRow.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+}

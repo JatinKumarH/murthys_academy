@@ -1,0 +1,157 @@
+/* ENHANCEMENT: Keyframes for staggered text animation */
+@keyframes slideUpFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 8%;
+  min-height: 90vh;
+  background-color: white;
+  /* ENHANCEMENT: Use the new modern font */
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden; /* Prevent animations from showing before they start */
+}
+
+.content {
+  flex: 1;
+  max-width: 50%;
+  padding-right: 2rem;
+}
+
+/* ENHANCEMENT: Staggered animation for each text element */
+.title {
+  font-family: 'Cambria', serif;
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--text-dark);
+  line-height: 1.2;
+  opacity: 0; /* Start hidden for animation */
+  animation: slideUpFadeIn 0.8s ease-out 0.2s forwards;
+}
+
+.highlight {
+  color: var(--vivid-red);
+}
+
+.subtitle {
+  font-size: 1.8rem;
+  margin-top: 2.5rem;
+  opacity: 0;
+  animation: slideUpFadeIn 0.8s ease-out 0.4s forwards;
+}
+
+.description {
+  font-size: 1.1rem;
+  margin-top: 2.5rem;
+  color: #555;
+  line-height: 1.8;
+  opacity: 0;
+  animation: slideUpFadeIn 0.8s ease-out 0.6s forwards;
+}
+
+.buttons {
+  margin-top: 3rem;
+  opacity: 0;
+  animation: slideUpFadeIn 0.8s ease-out 0.8s forwards;
+}
+
+.exploreButton, .signupButton {
+  padding: 14px 32px;
+  text-decoration: none;
+  border-radius: 8px; /* Slightly more rounded */
+  font-weight: 600; /* Bolder font weight */
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent; /* Prepare for outline button border */
+}
+
+/* ENHANCEMENT: Redesigned button with gradient and shadow */
+.exploreButton {
+  background-image: linear-gradient(45deg, var(--vivid-red), #ff4d4d);
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 18, 0, 0.3);
+}
+
+.exploreButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 18, 0, 0.4);
+}
+
+/* ENHANCEMENT: Redesigned outline button */
+.signupButton {
+  background-color: transparent;
+  color: var(--text-dark);
+  border-color: #ccc;
+}
+
+.signupButton:hover {
+  background-color: var(--text-dark);
+  color: white;
+  border-color: var(--text-dark);
+  transform: translateY(-3px);
+}
+
+.imageContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; 
+  /* ENHANCEMENT: Added a subtle shadow to the image */
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.1));
+}
+
+.heroImage {
+  max-width: 80%;
+  height: auto;
+}
+
+.omImage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 20%;
+  width: auto;
+  cursor: pointer;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7));
+}
+
+.rotate {
+  animation: rotate360 3.5s linear;
+}
+
+@media (max-width: 992px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .content {
+    max-width: 100%;
+    padding-right: 0;
+  }
+  .imageContainer {
+    margin-top: 3rem;
+  }
+}

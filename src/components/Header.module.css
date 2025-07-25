@@ -1,0 +1,256 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 4%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(255, 253, 202, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.leftSection {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--vivid-red);
+  font-weight: bold;
+}
+
+.logo span {
+    font-size: 1.6rem;
+    font-family: 'Cambria', serif;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 12px;
+}
+
+.desktopNav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.desktopNav a {
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  padding: 5px 0;
+}
+
+.desktopNav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--vivid-red);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.desktopNav a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* FIX: New container for all right-side actions */
+.rightActions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.desktopActions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.cartIcon {
+    font-size: 1.6rem;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease;
+}
+.cartIcon:hover {
+    color: var(--vivid-red);
+}
+
+.joinButton, .loginButton, .myLearning {
+  text-decoration: none;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  border: 2px solid transparent;
+  background: none;
+}
+
+.joinButton {
+  border-color: var(--text-dark);
+  color: var(--text-dark);
+}
+
+.joinButton:hover {
+  background-color: var(--text-dark);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.loginButton {
+  background-color: var(--vivid-red);
+  color: white;
+  border-color: var(--vivid-red);
+}
+
+.loginButton:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+  box-shadow: 0 4px 15px rgba(255, 18, 0, 0.3);
+}
+
+.myLearning {
+    color: var(--text-dark);
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    padding: 5px 0;
+}
+.myLearning::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--vivid-red);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+.myLearning:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.profileIcon {
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+.profileIcon:hover {
+    color: var(--vivid-red);
+}
+
+.cartContainer {
+    position: relative;
+}
+
+.cartContainer > div {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.cartContainer:hover > div {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* FIX: Mobile cart icon is hidden by default */
+.mobileCartIcon {
+    display: none;
+}
+
+.hamburger, .mobileNav {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  /* Hide the entire desktop actions block */
+  .desktopActions, .desktopNav {
+    display: none;
+  }
+  
+  /* Show the mobile-specific cart icon */
+  .mobileCartIcon {
+    display: flex;
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    text-decoration: none;
+    align-items: center;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .mobileNav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    background-color: var(--light-yellow);
+    position: absolute;
+    top: 69px;
+    right: 0;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transform: translateY(-150%);
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .mobileNav.open {
+    transform: translateY(0);
+  }
+
+  .mobileNav a {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .mobileActions {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #ddd;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+  }
+}

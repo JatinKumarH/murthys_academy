@@ -1,0 +1,240 @@
+.pageWrapper {
+    background-color: #f9f9f9;
+    font-family: 'Poppins', sans-serif;
+}
+
+.heroSection {
+    position: relative;
+    padding: 4rem 8%;
+    color: white;
+    background-color: #1c1c1c;
+    overflow: hidden;
+}
+
+.heroBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(15px) brightness(0.5);
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 2;
+}
+
+.courseTitle {
+    font-family: 'Cambria', serif;
+    font-size: 3.5rem;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.headline {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    max-width: 700px;
+    opacity: 0.9;
+}
+
+.instructor {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.dashboardLayout {
+    display: flex;
+    gap: 2.5rem;
+    padding: 3rem 8%;
+    align-items: flex-start;
+}
+
+.mainContent {
+    flex: 2;
+}
+
+.learningBox {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.sectionTitle {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    font-family: 'Cambria', serif;
+}
+
+.learningList {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.learningList li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.checkIcon {
+    color: var(--vivid-red);
+    margin-top: 5px;
+    flex-shrink: 0;
+}
+
+.sidebar {
+    flex: 1;
+    max-width: 380px;
+    position: sticky;
+    top: 100px;
+}
+
+.sidebarCard {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+}
+
+.preview {
+    position: relative;
+    cursor: pointer;
+}
+
+.previewImage {
+    width: 100%;
+    display: block;
+}
+
+.playIcon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    color: white;
+    opacity: 0.9;
+    text-shadow: 0 0 15px rgba(0,0,0,0.6);
+    transition: transform 0.3s ease;
+}
+
+.preview:hover .playIcon {
+    transform: translate(-50%, -50%) scale(1.15);
+}
+
+.preview span {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-shadow: 0 0 8px rgba(0,0,0,0.8);
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--text-dark);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.addToCartButton, .goToCourseButton {
+    /* FIX: Added properties to make the Link look like a button */
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    width: calc(100% - 3rem);
+    margin: 0 1.5rem 1rem 1.5rem;
+    padding: 1rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.2s ease;
+}
+
+.addToCartButton {
+    background-color: var(--vivid-red);
+    color: white;
+    border: none;
+}
+.addToCartButton:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 18, 0, 0.3);
+}
+
+.goToCourseButton {
+    text-decoration: none; /* Remove underline from Link */
+    background: transparent;
+    color: var(--text-dark);
+    border: 2px solid var(--text-dark);
+}
+.goToCourseButton:hover {
+    background-color: var(--text-dark);
+    color: white;
+}
+
+.includes {
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    border-top: 1px solid #f0f0f0;
+}
+
+.includes h4 {
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.includes ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.notFound {
+    text-align: center;
+    padding: 5rem;
+}
+
+@media (max-width: 992px) {
+    .dashboardLayout {
+        flex-direction: column-reverse;
+    }
+    .sidebar {
+        max-width: 100%;
+        position: static;
+        width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .learningList {
+        grid-template-columns: 1fr;
+    }
+    .heroSection, .dashboardLayout {
+        padding: 3rem 4%;
+    }
+    .courseTitle {
+        font-size: 2.5rem;
+    }
+}

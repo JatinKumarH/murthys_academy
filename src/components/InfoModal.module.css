@@ -1,0 +1,90 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal {
+  background-color: var(--light-yellow);
+  font-family: 'Poppins', sans-serif;
+  padding: 2.5rem;
+  border-radius: 12px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 400px;
+  border: 2px solid var(--text-dark);
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  font-weight: 300;
+  cursor: pointer;
+  color: var(--text-dark);
+  transition: color 0.2s ease;
+}
+
+.closeButton:hover {
+    color: var(--vivid-red);
+}
+
+/* FIX: Added style for the logo */
+.logo {
+    width: 50px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.title {
+  font-family: 'Cambria', serif;
+  color: var(--vivid-red);
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.linksContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.linkItem {
+    display: block;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid #ddd;
+}
+
+.linkItem:hover {
+    background-color: var(--vivid-red);
+    color: white;
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 4px 15px rgba(255, 18, 0, 0.3);
+    border-color: var(--vivid-red);
+}
