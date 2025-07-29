@@ -4,6 +4,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import { AnimationProvider } from './context/AnimationContext';
 import { AuthProvider } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
+import './App.css'; // Import the new CSS file
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -31,30 +32,33 @@ function App() {
   const googleClientId = "YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com";
 
   return (
-    <AuthProvider>
-      <GoogleOAuthProvider clientId={googleClientId}>
-        <AnimationProvider>
-          <CartProvider>
-            <Router>
-              <ScrollToTop />
-              <Header />
-              <AuthModal />
-              <main>
-                <Routes>
-                  <Route path="/" element={<HomePage />} />
-                  <Route path="/cart" element={<CartPage />} />
-                  <Route path="/course/:courseId" element={<CourseDashboard />} />
-                  <Route path="/learn/:courseId" element={<MyLearningPage />} />
-                  <Route path="/instructors" element={<InstructorsPage />} />
-                  <Route path="/instructors/:id" element={<InstructorDetailPage />} />
-                </Routes>
-              </main>
-              <Footer />
-            </Router>
-          </CartProvider>
-        </AnimationProvider>
-      </GoogleOAuthProvider>
-    </AuthProvider>
+    // FIX: Added this wrapper div to prevent horizontal overflow
+    <div className="app-wrapper">
+      <AuthProvider>
+        <GoogleOAuthProvider clientId={googleClientId}>
+          <AnimationProvider>
+            <CartProvider>
+              <Router>
+                <ScrollToTop />
+                <Header />
+                <AuthModal />
+                <main>
+                  <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/cart" element={<CartPage />} />
+                    <Route path="/course/:courseId" element={<CourseDashboard />} />
+                    <Route path="/learn/:courseId" element={<MyLearningPage />} />
+                    <Route path="/instructors" element={<InstructorsPage />} />
+                    <Route path="/instructors/:id" element={<InstructorDetailPage />} />
+                  </Routes>
+                </main>
+                <Footer />
+              </Router>
+            </CartProvider>
+          </AnimationProvider>
+        </GoogleOAuthProvider>
+      </AuthProvider>
+    </div>
   );
 }
 
