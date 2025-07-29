@@ -5,7 +5,13 @@
   min-height: 100vh;
 }
 
-/* This makes the main content area expand to fill all available space */
+/* FIX: This new wrapper will contain any horizontal overflow */
+.app-wrapper {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* This makes the main content area expand and push the footer */
 main {
   flex-grow: 1;
 }
