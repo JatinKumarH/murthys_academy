@@ -7,7 +7,14 @@ const ScrollToTop = () => {
 
   // Automatically scrolls to top whenever pathname changes
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // A timeout ensures the scroll happens after the new page has had a moment to render, which can be more reliable on some mobile browsers.
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'instant'
+      });
+    }, 0);
   }, [pathname]);
 
   return null; // This component does not render anything
