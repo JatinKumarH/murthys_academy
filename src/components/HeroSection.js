@@ -25,8 +25,9 @@ const HeroSection = () => {
     <section className={styles.hero} data-aos="fade-up">
       <div className={styles.content}>
         <h1 className={styles.title}>
-          Unlock The Secrets of <br />
-          <span className={styles.highlight}>Ancient Wisdom</span>
+          Unlock The Secrets <br />
+          {/* FIX: Wrapped this phrase in a span to prevent awkward wrapping */}
+          <span className={styles.noWrap}>of <span className={styles.highlight}>Ancient Wisdom</span></span>
         </h1>
         <p className={styles.subtitle}>
           Decades of expertise simplified into beginner-friendly courses.
