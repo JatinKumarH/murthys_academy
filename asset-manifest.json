@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/murthys_academy/static/css/main.3cda5ac8.css",
-    "main.js": "/murthys_academy/static/js/main.204ca313.js",
+    "main.css": "/murthys_academy/static/css/main.dbc96d36.css",
+    "main.js": "/murthys_academy/static/js/main.58a75ce1.js",
     "reactPlayerHls.js": "/murthys_academy/static/js/reactPlayerHls.9e8bd7b8.chunk.js",
     "reactPlayerDash.js": "/murthys_academy/static/js/reactPlayerDash.d4ea4554.chunk.js",
     "reactPlayerMux.js": "/murthys_academy/static/js/reactPlayerMux.5582b41d.chunk.js",
@@ -22,8 +22,8 @@
     "static/media/shastra.png": "/murthys_academy/static/media/shastra.2e4d865b7d5e68e5ca12.png",
     "static/media/astrology101.png": "/murthys_academy/static/media/astrology101.80cd8fa575bc77731e33.png",
     "index.html": "/murthys_academy/index.html",
-    "main.3cda5ac8.css.map": "/murthys_academy/static/css/main.3cda5ac8.css.map",
-    "main.204ca313.js.map": "/murthys_academy/static/js/main.204ca313.js.map",
+    "main.dbc96d36.css.map": "/murthys_academy/static/css/main.dbc96d36.css.map",
+    "main.58a75ce1.js.map": "/murthys_academy/static/js/main.58a75ce1.js.map",
     "reactPlayerHls.9e8bd7b8.chunk.js.map": "/murthys_academy/static/js/reactPlayerHls.9e8bd7b8.chunk.js.map",
     "reactPlayerDash.d4ea4554.chunk.js.map": "/murthys_academy/static/js/reactPlayerDash.d4ea4554.chunk.js.map",
     "reactPlayerMux.5582b41d.chunk.js.map": "/murthys_academy/static/js/reactPlayerMux.5582b41d.chunk.js.map",
@@ -38,7 +38,7 @@
     "933.0e00a10e.chunk.js.map": "/murthys_academy/static/js/933.0e00a10e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3cda5ac8.css",
-    "static/js/main.204ca313.js"
+    "static/css/main.dbc96d36.css",
+    "static/js/main.58a75ce1.js"
   ]
 }
